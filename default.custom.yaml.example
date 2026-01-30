@@ -1,0 +1,11 @@
+# Example: Add this to your default.custom.yaml to enable Nôm Việt
+# Location:
+#   macOS: ~/Library/Rime/default.custom.yaml
+#   Windows: %APPDATA%\Rime\default.custom.yaml
+#   Linux: ~/.config/ibus/rime/default.custom.yaml
+
+patch:
+  schema_list:
+    - schema: nom_viet
+    # Add other schemas you use below:
+    # - schema: luna_pinyin

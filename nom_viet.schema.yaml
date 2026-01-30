@@ -1,0 +1,144 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: nom_viet
+  name: Nôm Việt 喃越
+  version: "1.0"
+  author:
+    - Nôm Na Việt <hannom.nvnv.app>
+  description: |
+    Vietnamese Nôm (Chữ Nôm) input method with Telex support.
+    Type Vietnamese using Telex: aa=â, aw=ă, ow=ơ, uw=ư, dd=đ
+    Tones: s=sắc, f=huyền, r=hỏi, x=ngã, j=nặng
+    Example: "nguowif" → người → 𠊛
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ Nôm, ASCII ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - script_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz"
+  delimiter: " '"
+  algebra:
+    # Allow first-letter abbreviation for quick input
+    - "abbrev/^([a-z]).+$/$1/"
+
+translator:
+  dictionary: nom_viet
+  prism: nom_viet
+  enable_user_dict: true
+  enable_sentence: true
+  enable_completion: true
+  preedit_format:
+    # Convert Telex back to Vietnamese for display
+    - "xform/dd/đ/"
+    - "xform/awj/ặ/"
+    - "xform/awx/ẵ/"
+    - "xform/awr/ẳ/"
+    - "xform/aws/ắ/"
+    - "xform/awf/ằ/"
+    - "xform/aw/ă/"
+    - "xform/aaj/ậ/"
+    - "xform/aax/ẫ/"
+    - "xform/aar/ẩ/"
+    - "xform/aas/ấ/"
+    - "xform/aaf/ầ/"
+    - "xform/aa/â/"
+    - "xform/eej/ệ/"
+    - "xform/eex/ễ/"
+    - "xform/eer/ể/"
+    - "xform/ees/ế/"
+    - "xform/eef/ề/"
+    - "xform/ee/ê/"
+    - "xform/ooj/ộ/"
+    - "xform/oox/ỗ/"
+    - "xform/oor/ổ/"
+    - "xform/oos/ố/"
+    - "xform/oof/ồ/"
+    - "xform/oo/ô/"
+    - "xform/owj/ợ/"
+    - "xform/owx/ỡ/"
+    - "xform/owr/ở/"
+    - "xform/ows/ớ/"
+    - "xform/owf/ờ/"
+    - "xform/ow/ơ/"
+    - "xform/uwj/ự/"
+    - "xform/uwx/ữ/"
+    - "xform/uwr/ử/"
+    - "xform/uws/ứ/"
+    - "xform/uwf/ừ/"
+    - "xform/uw/ư/"
+    - "xform/aj/ạ/"
+    - "xform/ax/ã/"
+    - "xform/ar/ả/"
+    - "xform/as/á/"
+    - "xform/af/à/"
+    - "xform/ej/ẹ/"
+    - "xform/ex/ẽ/"
+    - "xform/er/ẻ/"
+    - "xform/es/é/"
+    - "xform/ef/è/"
+    - "xform/ij/ị/"
+    - "xform/ix/ĩ/"
+    - "xform/ir/ỉ/"
+    - "xform/is/í/"
+    - "xform/if/ì/"
+    - "xform/oj/ọ/"
+    - "xform/ox/õ/"
+    - "xform/or/ỏ/"
+    - "xform/os/ó/"
+    - "xform/of/ò/"
+    - "xform/uj/ụ/"
+    - "xform/ux/ũ/"
+    - "xform/ur/ủ/"
+    - "xform/us/ú/"
+    - "xform/uf/ù/"
+    - "xform/yj/ỵ/"
+    - "xform/yx/ỹ/"
+    - "xform/yr/ỷ/"
+    - "xform/ys/ý/"
+    - "xform/yf/ỳ/"
+
+custom_phrase:
+  dictionary: ""
+  user_dict: nom_viet_custom
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
