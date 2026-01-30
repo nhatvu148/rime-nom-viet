@@ -1,8 +1,8 @@
 # rime-nom-viet
 
-RIME 輸入法 Chữ Nôm (Vietnamese Nôm) input schema.
+RIME input schema for Vietnamese Chữ Nôm (喃字).
 
-Type Vietnamese using **Telex** to input Chữ Nôm (喃字) characters.
+Type Vietnamese using **Telex** to input Nôm characters.
 
 ## Features
 
@@ -25,6 +25,7 @@ Type Vietnamese using **Telex** to input Chữ Nôm (喃字) characters.
 | `dd` | đ | `ddi` → đi |
 
 **Tones:**
+
 | Key | Tone | Example |
 |-----|------|---------|
 | `s` | sắc (á) | `as` → á |
@@ -35,58 +36,146 @@ Type Vietnamese using **Telex** to input Chữ Nôm (喃字) characters.
 
 ## Installation
 
-### macOS (Squirrel)
+### macOS (Squirrel 鼠鬚管)
 
+**Step 1: Install Squirrel**
 ```bash
-# Using plum
-bash rime-install nhatvu148/rime-nom-viet
-
-# Or manually
-cp nom_viet.*.yaml ~/Library/Rime/
+brew install --cask squirrel
 ```
-Then right-click Squirrel icon → Deploy.
+Or download from: https://github.com/rime/squirrel/releases
 
-### Windows (Weasel)
-
+**Step 2: Install plum + nom_viet**
 ```bash
-# Using plum
-bash rime-install nhatvu148/rime-nom-viet
-
-# Or manually copy to:
-# %APPDATA%\Rime\
+cd ~/Library/Rime
+curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
+bash plum/rime-install nhatvu148/rime-nom-viet
 ```
-Then right-click Weasel icon → Deploy.
+
+Or **manually**:
+1. Download `nom_viet.schema.yaml` and `nom_viet.dict.yaml` from this repo
+2. Copy to `~/Library/Rime/`
+
+**Step 3: Add to schema list**
+
+Create/edit `~/Library/Rime/default.custom.yaml`:
+```yaml
+patch:
+  schema_list:
+    - schema: nom_viet
+    - schema: luna_pinyin
+```
+
+**Step 4: Deploy**
+- Click Squirrel icon in menu bar → Deploy (重新部署)
+- Or run: `/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload`
+
+**Step 5: Select schema**
+- Press `Ctrl+`` or `F4` to switch to "Nôm Việt 喃越"
+
+---
+
+### Windows (Weasel 小狼毫)
+
+**Step 1: Install Weasel**
+- Download from: https://github.com/rime/weasel/releases
+- Run installer, restart if needed
+
+**Step 2: Install plum + nom_viet**
+
+Open **Git Bash** (not PowerShell):
+```bash
+cd "$APPDATA/Rime"
+git clone --depth 1 https://github.com/rime/plum.git
+bash plum/rime-install nhatvu148/rime-nom-viet
+```
+
+Or **manually**:
+1. Download `nom_viet.schema.yaml` and `nom_viet.dict.yaml` from this repo
+2. Copy to `%APPDATA%\Rime\` (usually `C:\Users\<username>\AppData\Roaming\Rime\`)
+
+**Step 3: Add to schema list**
+
+Create/edit `%APPDATA%\Rime\default.custom.yaml`:
+```yaml
+patch:
+  schema_list:
+    - schema: nom_viet
+    - schema: luna_pinyin
+```
+
+**Step 4: Deploy**
+- Right-click Weasel icon in system tray → 重新部署 (Deploy)
+
+**Step 5: Select schema**
+- Press `Ctrl+`` or `F4` to switch to "Nôm Việt 喃越"
+
+---
 
 ### Linux (ibus-rime / fcitx5-rime)
 
+**Step 1: Install ibus-rime or fcitx5-rime**
 ```bash
-# Using plum
-bash rime-install nhatvu148/rime-nom-viet
+# Ubuntu/Debian
+sudo apt install ibus-rime
+# or
+sudo apt install fcitx5-rime
 
-# Or manually copy to:
-# ~/.config/ibus/rime/
-# or ~/.local/share/fcitx5/rime/
+# Arch
+sudo pacman -S ibus-rime
+# or
+sudo pacman -S fcitx5-rime
 ```
+
+**Step 2: Install plum + nom_viet**
+```bash
+# For ibus-rime
+cd ~/.config/ibus/rime
+
+# For fcitx5-rime
+cd ~/.local/share/fcitx5/rime
+
+# Then install
+curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
+bash plum/rime-install nhatvu148/rime-nom-viet
+```
+
+**Step 3: Add to schema list**
+
+Edit `default.custom.yaml` in the same directory:
+```yaml
+patch:
+  schema_list:
+    - schema: nom_viet
+    - schema: luna_pinyin
+```
+
+**Step 4: Deploy**
+- ibus: Right-click icon → Deploy
+- fcitx5: Right-click icon → Restart
+
+---
 
 ### Android (Trime 同文輸入法)
 
-1. Install [Trime](https://github.com/osfans/trime) from GitHub releases
-2. Copy `nom_viet.*.yaml` to `/sdcard/rime/`
-3. Open Trime → Deploy
+1. Install [Trime](https://github.com/osfans/trime/releases) from GitHub releases
+2. Download `nom_viet.schema.yaml` and `nom_viet.dict.yaml`
+3. Copy to `/sdcard/rime/` using file manager
+4. Open Trime → Settings → Deploy
+5. Select "Nôm Việt" in schema list
+
+---
 
 ### iOS (iRime)
 
 1. Install [iRime](https://apps.apple.com/app/id1142623977) from App Store
-2. Transfer files via iCloud or WebDAV
-3. Deploy in app settings
+2. Download the schema files
+3. Transfer via iCloud Drive or WebDAV (built into iRime)
+4. Deploy in app settings
+5. Select "Nôm Việt" schema
 
-## Usage
+---
 
-1. Switch to Squirrel/Weasel/etc input method
-2. Press `Ctrl+`` or `F4` to select "Nôm Việt 喃越"
-3. Type Vietnamese in Telex: `vieetj nam` → 越南
-
-## Examples
+## Usage Examples
 
 | Input | Vietnamese | Output |
 |-------|------------|--------|
