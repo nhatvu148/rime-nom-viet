@@ -1,8 +1,0 @@
-# Rime recipe for rime-nom-viet
-# encoding: utf-8
-
-__include: nom_viet:/
-
-nom_viet:
-  schema: nom_viet
-  dictionary: nom_viet
