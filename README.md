@@ -44,16 +44,18 @@ brew install --cask squirrel
 ```
 Or download from: https://github.com/rime/squirrel/releases
 
-**Step 2: Install plum + nom_viet**
+**Step 2: Install nom_viet**
+
+**Option A: One-line installer (recommended)**
 ```bash
-cd ~/Library/Rime
-curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
-bash plum/rime-install nhatvu148/rime-nom-viet
+curl -fsSL https://github.com/nhatvu148/rime-nom-viet/raw/main/install.sh | bash
 ```
 
-Or **manually**:
-1. Download `nom_viet.schema.yaml` and `nom_viet.dict.yaml` from this repo
-2. Copy to `~/Library/Rime/`
+**Option B: Manual download**
+1. Download these 2 files:
+   - [nom_viet.schema.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml)
+   - [nom_viet.dict.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml)
+2. Copy both to `~/Library/Rime/`
 
 **Step 3: Add to schema list**
 
@@ -80,18 +82,19 @@ patch:
 - Download from: https://github.com/rime/weasel/releases
 - Run installer, restart if needed
 
-**Step 2: Install plum + nom_viet**
+**Step 2: Install nom_viet**
 
-Open **Git Bash** (not PowerShell):
-```bash
-cd "$APPDATA/Rime"
-git clone --depth 1 https://github.com/rime/plum.git
-bash plum/rime-install nhatvu148/rime-nom-viet
-```
+**Option A: One-click installer (recommended)**
+1. Download [install.cmd](https://github.com/nhatvu148/rime-nom-viet/raw/main/install.cmd)
+2. Double-click to run
 
-Or **manually**:
-1. Download `nom_viet.schema.yaml` and `nom_viet.dict.yaml` from this repo
-2. Copy to `%APPDATA%\Rime\` (usually `C:\Users\<username>\AppData\Roaming\Rime\`)
+**Option B: Manual download**
+1. Download these 2 files:
+   - [nom_viet.schema.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml)
+   - [nom_viet.dict.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml)
+2. Copy both to `%APPDATA%\Rime\`
+
+> **Tip:** Type `%APPDATA%\Rime` in File Explorer address bar to open the folder.
 
 **Step 3: Add to schema list**
 
@@ -126,7 +129,14 @@ sudo pacman -S ibus-rime
 sudo pacman -S fcitx5-rime
 ```
 
-**Step 2: Install plum + nom_viet**
+**Step 2: Install nom_viet**
+
+**Option A: One-line installer (recommended)**
+```bash
+curl -fsSL https://github.com/nhatvu148/rime-nom-viet/raw/main/install.sh | bash
+```
+
+**Option B: Manual download**
 ```bash
 # For ibus-rime
 cd ~/.config/ibus/rime
@@ -134,9 +144,9 @@ cd ~/.config/ibus/rime
 # For fcitx5-rime
 cd ~/.local/share/fcitx5/rime
 
-# Then install
-curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
-bash plum/rime-install nhatvu148/rime-nom-viet
+# Download files
+curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml
+curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml
 ```
 
 **Step 3: Add to schema list**
