@@ -4,4 +4,6 @@
 patch:
   style/horizontal: true
   style/candidate_list_layout: linear
+  style/font_face: "HanaMinA,HanaMinB,BabelStone Han,Plangothic P1,Plangothic P2,Noto Sans CJK SC"
+  style/font_point: 18
   menu/page_size: 9
