@@ -1,0 +1,5 @@
+# Weasel (Windows) configuration for Nôm Việt
+# Sets horizontal candidate list like Soạn Nôm IME
+
+patch:
+  style/horizontal: true

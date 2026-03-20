@@ -1,0 +1,7 @@
+# Squirrel (macOS) configuration for Nôm Việt
+# Sets horizontal candidate list like Soạn Nôm IME
+
+patch:
+  style/horizontal: true
+  style/candidate_list_layout: linear
+  menu/page_size: 9

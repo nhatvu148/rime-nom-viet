@@ -28,6 +28,9 @@ echo     - schema: nom_viet
 echo     - schema: luna_pinyin
 ) > "%RIME_DIR%\default.custom.yaml"
 
+echo Downloading weasel.custom.yaml (horizontal candidate list)...
+curl -L -o "%RIME_DIR%\weasel.custom.yaml" https://github.com/nhatvu148/rime-nom-viet/raw/main/weasel.custom.yaml
+
 echo.
 echo ========================================
 echo   Installation complete!

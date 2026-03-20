@@ -38,6 +38,18 @@ patch:
     - schema: luna_pinyin
 EOF
 
+echo "Setting horizontal candidate list..."
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/squirrel.custom.yaml
+else
+    # Linux: ibus-rime and fcitx5-rime use ibus_rime.custom.yaml / fcitx_rime.custom.yaml
+    # but most support squirrel.custom.yaml style too
+    cat > squirrel.custom.yaml << 'STYLE'
+patch:
+  style/horizontal: true
+STYLE
+fi
+
 echo
 echo "========================================"
 echo "  Installation complete!"
