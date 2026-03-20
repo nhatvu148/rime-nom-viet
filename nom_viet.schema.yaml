@@ -139,6 +139,8 @@ punctuator:
 
 key_binder:
   import_preset: default
+  bindings:
+    - { when: has_menu, accept: Return, send: space }
 
 recognizer:
   import_preset: default
