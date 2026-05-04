@@ -6,8 +6,8 @@ Type Vietnamese using **Telex** to input Nôm characters.
 
 ## Features
 
-- **52,000+ entries** - One of the most comprehensive Nôm dictionaries
-- **38,000 compound words** - Multi-syllable phrases like "việt nam" → 越南
+- **100,000+ entries** - One of the most comprehensive Nôm dictionaries
+- **46,000 compound words** - Multi-syllable phrases like "việt nam" → 越南
 - **Telex input** - Type `nguowfi` to get 𠊛 (người)
 - **Vietnamese preview** - Shows "người" instead of "nguowfi" while typing
 - **Frequency ranking** - Common characters appear first
@@ -197,7 +197,11 @@ patch:
 
 ## Data Source
 
-Dictionary data from [Nôm Na Việt](https://hannom.nvnv.app) - a comprehensive Vietnamese Hán-Nôm dictionary platform.
+Dictionary data from [Nôm Na Việt](https://nomnaviet.com) — a comprehensive Vietnamese Hán-Nôm dictionary platform.
+
+## Maintenance
+
+The dictionary is partly auto-generated from the upstream Nôm Na Việt database. Entries between the markers `# >>> NOM-NA-VIET-AUTO-START` and `# <<< NOM-NA-VIET-AUTO-END` at the end of `nom_viet.dict.yaml` are appended by an automated export; re-runs strip and rewrite only the marked block, so hand-curated lines outside it are preserved across refreshes. To add an entry by hand, place it anywhere outside the auto-block.
 
 ## License
 
