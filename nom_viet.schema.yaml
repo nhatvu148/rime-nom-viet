@@ -6,7 +6,7 @@ schema:
   name: Nôm Việt 喃越
   version: "1.0"
   author:
-    - Nôm Na Việt <hannom.nvnv.app>
+    - Nôm Na Việt <nomnaviet.com>
   description: |
     Vietnamese Nôm (Chữ Nôm) input method with Telex support.
     Type Vietnamese using Telex: aa=â, aw=ă, ow=ơ, uw=ư, dd=đ
@@ -47,20 +47,6 @@ speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz"
   delimiter: " '"
   algebra:
-    # Accept tone code at the end of a syllable as well as immediately after
-    # the toned vowel. The dict stores 'ngafy', 'vieejt', 'nguwowfi'
-    # (tone-after-vowel); this rule also accepts the Unikey-style
-    # 'ngayf', 'vieetj', 'nguwowif' (tone-at-end). Anchored on word
-    # boundaries so it works per-syllable in multi-syllable codes.
-    - "derive/(^|[ ])([^sfrxj ]*)([sfrxj])([^sfrxj ]+)(?=[ ]|$)/$1$2$4$3/"
-    # Accept single-w 'uow' as a synonym for stored 'uwow' (ươ cluster).
-    # Matches standard Telex on commercial IMEs (Unikey, etc.) and saves a
-    # keystroke on ~1,400 entries (e.g. nguowfi → người, chuowsng → xướng).
-    - "derive/uwow/uow/"
-    # Accept lone 'w' as a shortcut for 'uw' (ư). Matches Unikey-style Telex:
-    # 'tw' → tư, 'chwa' → chưa, etc. Applies after 'aw'/'ow'/'uw' compounds
-    # are already matched, so it only affects bare 'w' positions.
-    - "derive/uw/w/"
     # Allow first-letter abbreviation for quick input
     - "abbrev/^([a-z]).+$/$1/"
 
@@ -71,12 +57,7 @@ translator:
   enable_sentence: true
   enable_completion: true
   preedit_format:
-    # Convert Telex back to Vietnamese for display.
-    # First, normalize end-of-syllable tone position to immediately-after-vowel
-    # so the per-vowel xforms below ("af → à" etc.) match either input style.
-    # Pattern: vowel (compound or plain) + optional off-glide + optional
-    # consonants + tone at end of syllable → vowel + tone + glide + consonants.
-    - "xform/(aa|aw|ee|oo|ow|uw|[aeiouy])([iyuw]?)([^aeiouywsfrxj ]*)([sfrxj])(?=$| )/$1$4$2$3/"
+    # Convert Telex back to Vietnamese for display
     - "xform/dd/đ/"
     - "xform/awj/ặ/"
     - "xform/awx/ẵ/"
@@ -114,14 +95,6 @@ translator:
     - "xform/uws/ứ/"
     - "xform/uwf/ừ/"
     - "xform/uw/ư/"
-    # Lone 'w' shortcut: any remaining w (i.e. not consumed by aw/ow/uw above)
-    # represents ư. Matches Unikey-style 'tw' → tư, 'chwa' → chưa.
-    - "xform/wj/ự/"
-    - "xform/wx/ữ/"
-    - "xform/wr/ử/"
-    - "xform/ws/ứ/"
-    - "xform/wf/ừ/"
-    - "xform/w/ư/"
     - "xform/aj/ạ/"
     - "xform/ax/ã/"
     - "xform/ar/ả/"
