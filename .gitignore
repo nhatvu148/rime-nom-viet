@@ -1,0 +1,6 @@
+.claude/
+__pycache__/
+*.pyc
+nom_viet.dict.yaml.bak
+scripts/*.tsv
+default.custom.yaml

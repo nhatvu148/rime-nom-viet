@@ -1,5 +1,14 @@
 # Weasel (Windows) configuration for Nôm Việt
-# Sets horizontal candidate list like Soạn Nôm IME
+# Sets horizontal candidate list like Soạn Nôm IME and configures
+# Nom Na Tong as the primary candidate font (covers SPUA-A Nôm chars,
+# U+F0000+, used by chunom.org / Nôm Na Việt). Latin/CJK fonts follow
+# as fallbacks so the QN preview and any non-Nôm chars still render.
 
 patch:
   style/horizontal: true
+  style/font_face: "Nom Na Tong, Segoe UI, Microsoft YaHei"
+  style/font_point: 20
+  style/label_font_face: "Segoe UI, Microsoft YaHei"
+  style/label_font_point: 16
+  style/comment_font_face: "Segoe UI, Microsoft YaHei"
+  style/comment_font_point: 14
