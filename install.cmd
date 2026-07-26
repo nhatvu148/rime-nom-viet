@@ -14,10 +14,10 @@ if not exist "%RIME_DIR%" (
 )
 
 echo Downloading nom_viet.schema.yaml...
-curl -L -o "%RIME_DIR%\nom_viet.schema.yaml" https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml
+curl -L -o "%RIME_DIR%\nom_viet.schema.yaml" https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.schema.yaml
 
 echo Downloading nom_viet.dict.yaml...
-curl -L -o "%RIME_DIR%\nom_viet.dict.yaml" https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml
+curl -L -o "%RIME_DIR%\nom_viet.dict.yaml" https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.dict.yaml
 
 echo.
 echo Creating default.custom.yaml...
@@ -29,7 +29,7 @@ echo     - schema: luna_pinyin
 ) > "%RIME_DIR%\default.custom.yaml"
 
 echo Downloading weasel.custom.yaml (horizontal candidate list)...
-curl -L -o "%RIME_DIR%\weasel.custom.yaml" https://github.com/nhatvu148/rime-nom-viet/raw/main/weasel.custom.yaml
+curl -L -o "%RIME_DIR%\weasel.custom.yaml" https://github.com/nomnaviet/rime-nom-viet/raw/main/weasel.custom.yaml
 
 echo.
 echo ========================================

@@ -24,10 +24,10 @@ echo
 cd "$RIME_DIR"
 
 echo "Downloading nom_viet.schema.yaml..."
-curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml
+curl -LO https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.schema.yaml
 
 echo "Downloading nom_viet.dict.yaml..."
-curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml
+curl -LO https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.dict.yaml
 
 echo
 echo "Creating default.custom.yaml..."
@@ -40,7 +40,7 @@ EOF
 
 echo "Setting horizontal candidate list..."
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/squirrel.custom.yaml
+    curl -LO https://github.com/nomnaviet/rime-nom-viet/raw/main/squirrel.custom.yaml
 else
     # Linux: ibus-rime and fcitx5-rime use ibus_rime.custom.yaml / fcitx_rime.custom.yaml
     # but most support squirrel.custom.yaml style too

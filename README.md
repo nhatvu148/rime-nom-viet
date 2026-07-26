@@ -48,13 +48,13 @@ Or download from: https://github.com/rime/squirrel/releases
 
 **Option A: One-line installer (recommended)**
 ```bash
-curl -fsSL https://github.com/nhatvu148/rime-nom-viet/raw/main/install.sh | bash
+curl -fsSL https://github.com/nomnaviet/rime-nom-viet/raw/main/install.sh | bash
 ```
 
 **Option B: Manual download**
 1. Download these 2 files:
-   - [nom_viet.schema.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml)
-   - [nom_viet.dict.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml)
+   - [nom_viet.schema.yaml](https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.schema.yaml)
+   - [nom_viet.dict.yaml](https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.dict.yaml)
 2. Copy both to `~/Library/Rime/`
 
 **Step 3: Add to schema list**
@@ -85,13 +85,13 @@ patch:
 **Step 2: Install nom_viet**
 
 **Option A: One-click installer (recommended)**
-1. Download [install.cmd](https://github.com/nhatvu148/rime-nom-viet/raw/main/install.cmd)
+1. Download [install.cmd](https://github.com/nomnaviet/rime-nom-viet/raw/main/install.cmd)
 2. Double-click to run
 
 **Option B: Manual download**
 1. Download these 2 files:
-   - [nom_viet.schema.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml)
-   - [nom_viet.dict.yaml](https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml)
+   - [nom_viet.schema.yaml](https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.schema.yaml)
+   - [nom_viet.dict.yaml](https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.dict.yaml)
 2. Copy both to `%APPDATA%\Rime\`
 
 > **Tip:** Type `%APPDATA%\Rime` in File Explorer address bar to open the folder.
@@ -133,7 +133,7 @@ sudo pacman -S fcitx5-rime
 
 **Option A: One-line installer (recommended)**
 ```bash
-curl -fsSL https://github.com/nhatvu148/rime-nom-viet/raw/main/install.sh | bash
+curl -fsSL https://github.com/nomnaviet/rime-nom-viet/raw/main/install.sh | bash
 ```
 
 **Option B: Manual download**
@@ -145,8 +145,8 @@ cd ~/.config/ibus/rime
 cd ~/.local/share/fcitx5/rime
 
 # Download files
-curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.schema.yaml
-curl -LO https://github.com/nhatvu148/rime-nom-viet/raw/main/nom_viet.dict.yaml
+curl -LO https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.schema.yaml
+curl -LO https://github.com/nomnaviet/rime-nom-viet/raw/main/nom_viet.dict.yaml
 ```
 
 **Step 3: Add to schema list**
